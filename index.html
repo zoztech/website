@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="description" content="Mogg Tech - Websites, Mobile Apps, Backend Software and Technology Solutions" />
+<title>Mogg Tech</title>
+<style>
+:root{
+--bg:#07111f;
+--bg2:#0d1d34;
+--primary:#53c5ff;
+--accent:#89f7d1;
+--text:#eaf4ff;
+--muted:#b7c6d9;
+--card:rgba(255,255,255,.06);
+--border:rgba(255,255,255,.1);
+--shadow:0 10px 30px rgba(0,0,0,.28);
+--radius:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+font-family:Inter,Segoe UI,Arial,sans-serif;
+background:
+radial-gradient(circle at 20% 20%,rgba(83,197,255,.18),transparent 35%),
+radial-gradient(circle at 80% 30%,rgba(137,247,209,.15),transparent 30%),
+linear-gradient(180deg,var(--bg),var(--bg2));
+color:var(--text);
+line-height:1.5;
+overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{
+position:sticky;top:0;z-index:50;
+backdrop-filter:blur(12px);
+background:rgba(7,17,31,.72);
+border-bottom:1px solid rgba(255,255,255,.08)
+}
+.nav{
+display:flex;justify-content:space-between;align-items:center;padding:16px 0;
+}
+.logo{
+display:flex;gap:12px;align-items:center;font-weight:800;font-size:1.2rem
+}
+.logo-badge{
+width:42px;height:42px;border-radius:14px;
+background:linear-gradient(135deg,var(--primary),var(--accent));
+display:grid;place-items:center;
+box-shadow:0 8px 20px rgba(83,197,255,.35)
+}
+.nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.cta-btn{
+background:linear-gradient(135deg,var(--primary),#4b8dff);
+padding:12px 18px;border-radius:14px;font-weight:700;
+box-shadow:0 8px 22px rgba(58,145,255,.35);
+transition:.25s transform
+}
+.cta-btn:hover{transform:translateY(-2px)}
+.hero{padding:72px 0 54px}
+.hero-grid{
+display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center
+}
+.badge{
+display:inline-flex;gap:8px;align-items:center;
+padding:10px 14px;background:var(--card);border:1px solid var(--border);
+border-radius:999px;color:var(--accent);font-size:.95rem;margin-bottom:18px
+}
+h1{
+font-size:clamp(2.35rem,6vw,4.6rem);
+line-height:1.05;font-weight:900;letter-spacing:-.03em;margin-bottom:18px
+}
+.gradient{background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.08rem;color:var(--muted);max-width:660px;margin-bottom:28px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-alt{
+padding:12px 18px;border:1px solid var(--border);border-radius:14px;background:var(--card)
+}
+.hero-visual{
+background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+border:1px solid var(--border);border-radius:30px;padding:18px;box-shadow:var(--shadow)
+}
+.dashboard{
+display:grid;grid-template-columns:repeat(2,1fr);gap:14px
+}
+.panel{
+background:rgba(10,27,50,.75);border:1px solid rgba(255,255,255,.08);
+border-radius:22px;padding:20px;min-height:165px
+}
+.panel h3{margin-top:12px;margin-bottom:8px}
+.panel p{color:var(--muted);font-size:.95rem}
+section{padding:56px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 32px}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:12px}
+.section-head p{color:var(--muted)}
+.services{
+display:grid;grid-template-columns:repeat(4,1fr);gap:18px
+}
+.card{
+background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+padding:26px;box-shadow:var(--shadow)
+}
+.card h3{margin:14px 0 10px}
+.card p{color:var(--muted)}
+.trust{
+display:grid;grid-template-columns:repeat(3,1fr);gap:18px
+}
+.metric{font-size:2.1rem;font-weight:900;margin-top:10px}
+.contact-box{
+background:linear-gradient(135deg,rgba(83,197,255,.12),rgba(137,247,209,.08));
+border:1px solid rgba(137,247,209,.18);
+border-radius:32px;padding:34px;text-align:center
+}
+.contact-links{
+display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:22px
+}
+footer{
+padding:32px 0;border-top:1px solid rgba(255,255,255,.08);margin-top:30px;color:var(--muted)
+}
+.small{font-size:.92rem}
+.icon{width:42px;height:42px}
+.floating-whatsapp{
+position:fixed;right:16px;bottom:16px;z-index:60;
+width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+background:linear-gradient(135deg,#1bd741,#0aa72a);box-shadow:0 10px 25px rgba(0,0,0,.35)
+}
+@media (max-width:920px){
+.hero-grid,.services,.trust{grid-template-columns:1fr 1fr}
+.hero-grid{gap:28px}
+}
+@media (max-width:720px){
+.nav-links a:not(.cta-btn){display:none}
+.hero{padding-top:46px}
+.hero-grid,.services,.trust,.dashboard{grid-template-columns:1fr}
+h1{line-height:1.12}
+.panel{min-height:auto}
+}
+</style>
+</head>
+<body><header>
+<div class="container nav">
+<a href="#" class="logo">
+<span class="logo-badge">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M4 16L12 4L20 16" stroke="#07111f" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M8 18H16" stroke="#07111f" stroke-width="2.6" stroke-linecap="round"/>
+</svg>
+</span>
+<span>Mogg Tech</span>
+</a>
+<nav class="nav-links">
+<a href="#services">Services</a>
+<a href="#why">Why Us</a>
+<a href="#contact" class="cta-btn">Contact Us</a>
+</nav>
+</div>
+</header><section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="badge">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3L20 7V12C20 17 16.5 20.5 12 21C7.5 20.5 4 17 4 12V7L12 3Z" stroke="#89f7d1" stroke-width="2"/><path d="M9 12L11 14L15 10" stroke="#89f7d1" stroke-width="2"/></svg>
+Trusted Digital Engineering
+</div>
+<h1>Build with <span class="gradient">Reliable Technology</span><br>Scale with Confidence</h1>
+<p class="lead">
+Mogg Tech delivers modern websites, mobile applications, backend systems, integrations and custom software solutions engineered for performance, security and business growth.
+</p>
+<div class="hero-actions">
+<a class="cta-btn" href="https://wa.me/201015030226">WhatsApp Us</a>
+<a class="btn-alt" href="tel:+201015030226">Call +20 101 503 0226</a>
+</div>
+</div><div class="hero-visual">
+<div class="dashboard">
+<div class="panel">
+<svg class="icon" viewBox="0 0 64 64" fill="none">
+<rect x="10" y="14" width="44" height="30" rx="6" stroke="#53c5ff" stroke-width="3"/>
+<path d="M22 50H42" stroke="#89f7d1" stroke-width="3"/>
+</svg>
+<h3>Web Engineering</h3>
+<p>Fast, secure and conversion-oriented websites and platforms.</p>
+</div>
+<div class="panel">
+<svg class="icon" viewBox="0 0 64 64" fill="none">
+<rect x="20" y="8" width="24" height="48" rx="6" stroke="#89f7d1" stroke-width="3"/>
+<circle cx="32" cy="47" r="2.8" fill="#53c5ff"/>
+</svg>
+<h3>Mobile Apps</h3>
+<p>Native-feel applications for Android and iOS experiences.</p>
+</div>
+<div class="panel">
+<svg class="icon" viewBox="0 0 64 64" fill="none">
+<path d="M14 20H50V44H14z" stroke="#53c5ff" stroke-width="3"/>
+<path d="M22 28H42M22 36H34" stroke="#89f7d1" stroke-width="3"/>
+</svg>
+<h3>Backend Systems</h3>
+<p>APIs, automation, databases and scalable business logic.</p>
+</div>
+<div class="panel">
+<svg class="icon" viewBox="0 0 64 64" fill="none">
+<path d="M18 32H46" stroke="#53c5ff" stroke-width="3"/>
+<circle cx="18" cy="32" r="6" stroke="#89f7d1" stroke-width="3"/>
+<circle cx="46" cy="32" r="6" stroke="#89f7d1" stroke-width="3"/>
+</svg>
+<h3>Integration & Support</h3>
+<p>Reliable support, optimization and technical consultation.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section id="services">
+<div class="container">
+<div class="section-head">
+<h2>Core Services</h2>
+<p>Technology delivery focused on reliability, scalability and maintainable engineering.</p>
+</div>
+<div class="services">
+<div class="card">
+<h3>Website Development</h3>
+<p>Corporate sites, ecommerce, portals, landing pages and custom web applications.</p>
+</div>
+<div class="card">
+<h3>Mobile Applications</h3>
+<p>Business apps, customer apps and integrated mobile solutions.</p>
+</div>
+<div class="card">
+<h3>Backend Software</h3>
+<p>APIs, internal systems, SaaS platforms and process automation.</p>
+</div>
+<div class="card">
+<h3>Technical Services</h3>
+<p>Optimization, maintenance, architecture consulting and support services.</p>
+</div>
+</div>
+</div>
+</section><section id="why">
+<div class="container">
+<div class="section-head">
+<h2>Why Businesses Trust Mogg Tech</h2>
+<p>We emphasize dependable delivery, modern engineering standards and long-term solution value.</p>
+</div>
+<div class="trust">
+<div class="card">
+<h3>Performance Focus</h3>
+<div class="metric">Fast</div>
+<p>Lean code, optimized assets and responsive experiences.</p>
+</div>
+<div class="card">
+<h3>Reliable Architecture</h3>
+<div class="metric">Secure</div>
+<p>Built with stability, maintainability and operational trust in mind.</p>
+</div>
+<div class="card">
+<h3>Modern Stack</h3>
+<div class="metric">Scalable</div>
+<p>Technology choices aligned with growth and future extensibility.</p>
+</div>
+</div>
+</div>
+</section><section id="contact">
+<div class="container">
+<div class="contact-box">
+<h2>Start Your Project</h2>
+<p class="lead" style="margin:12px auto 0;max-width:700px">
+Discuss your website, app or software idea directly with Mogg Tech.
+</p>
+<div class="contact-links">
+<a class="cta-btn" href="https://wa.me/201015030226">Chat on WhatsApp</a>
+<a class="btn-alt" href="tel:+201015030226">Call +20 101 503 0226</a>
+</div>
+</div>
+</div>
+</section><footer>
+<div class="container small">
+© 2026 Mogg Tech — Modern Technology Solutions.
+</div>
+</footer><a class="floating-whatsapp" href="https://wa.me/201015030226" aria-label="WhatsApp">
+<svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+<path d="M16 5C10 5 5.3 9.7 5.3 15.6c0 1.9.5 3.8 1.5 5.4L5.5 27l6.2-1.3c1.4.8 2.8 1.2 4.3 1.2 6 0 10.7-4.7 10.7-10.6C26.7 9.7 22 5 16 5Z" stroke="white" stroke-width="2"/>
+<path d="M12.8 11.9c-.4-.9-.8-.8-1.1-.8-.3 0-.6 0-.9.3-.3.3-1.1 1.1-1.1 2.6 0 1.5 1.1 3 1.3 3.2.2.2 2.2 3.5 5.5 4.7 2.7 1 2.7.7 3.2.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.7-.4-.4-.2-2.1-1-2.4-1.1-.3-.1-.5-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.2-.8 0-.4-.2-1.6-.6-3.1-2-.9-.8-1.6-1.8-1.8-2.1-.2-.4 0-.6.2-.8.2-.2.4-.5.5-.7.2-.2.2-.4.3-.6.1-.2 0-.5-.1-.7-.1-.2-.7-1.8-1-2.4Z" fill="white"/>
+</svg>
+</a></body>
+</html>
